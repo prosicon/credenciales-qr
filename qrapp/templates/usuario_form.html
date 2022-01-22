@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h5> Contenido de Usuario FORM </h5>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <a href="{% url 'qr:usuario_crear' %}">Limpiar datos</a>
+    <button type="submit" name="action">Guardar</button>
+</form>
+{% endblock %}

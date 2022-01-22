@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  {% load static %}
+  {% block css %}
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link type="text/css" rel="stylesheet" href="{% static 'qrapp/css/materialize.min.css' %}" media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  {% endblock css %}
+  {% block title %}
+    <title> DIRECCIÓN DE RECURSOS HUMANOS - H. AYUNTAMIENTO DE MORELIA </title>
+    <!-- <link rel="shortcut icon" type="image/png" href="{% static 'printexapp/imagenes/favicon.ico' %}"/> -->
+  {% endblock %}
+  {% block head %}
+    <!-- ################  Cabecera de la BASE general ####################-->
+    <div class="blue darken-3">
+      <div class="row">
+        <div class="col s12"></div>
+      </div>
+      <div class="row">
+        <div class="col s1 m1">
+        </div>
+        <div class="col s5 m5">
+          <a href="{% url 'qrapp:inicio' %}" class="brand-logo"><img class="responsive-img" style="width:190px;height:100%;" alt="" src="{% static 'qrapp/imagenes/logo_ayuntamiento_blanco.png' %}"></a>
+        </div>
+        <div class="col s3 m3">
+        </div>
+        <div class="col s3 m2">
+          <a href="https://www.morelia.gob.mx" target="_blank" class="brand-logo"><img class="responsive-img" style="width:80px;height:100%;" alt="" src="{% static 'qrapp/imagenes/logo_morelia_brilla_blanco.png' %}"></a>
+        </div>
+        <div class="col s1 m1"></div>
+      </div>
+    </div>
+<!-- ###################################################### -->
+
+{% endblock %}
+
+</head>
+<body>
+  {% block presentacion %}
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% block footer %}
+    <div class="row"></div>
+    <div class="white">
+      <div class="container">
+        <div class="row">
+          <!--<div class="white-text">
+          <div class="col s12">
+            <a href="https://www.morelia.gob.mx">Inicio</a>
+              &nbsp;||&nbsp;<a href="{% url 'qrapp:inicio' %}">
+              Aviso de Privacidad</a>
+            </p>
+          -->
+            <div class="col s2"></div>
+            <div class="col s8">
+              <img class="responsive-img" style="width:1000%;height:100%;" alt="" src="{% static 'qrapp/imagenes/barra_colores.png' %}">
+            </div>
+            </div>
+            <div class="col s2"></div>
+          </div>
+          <div class="row"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+  {% block javascript %}
+  <!-- Compiled and minified JavaScript  -->
+  <script>
+
+
+  </script>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="{% static 'qrapp/js/materialize.min.js' %}"></script>
+{% endblock javascript %}
+{% block js %}
+{% endblock %}
+</body>
+</html>

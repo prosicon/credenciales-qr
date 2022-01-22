@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Nombre</td>
+        <td>Edad</td>
+        <td>Grado</td>
+        <td>Corre electrónico</td>
+        <td>Fecha de creación</td>
+        <td>Ultima actualización</td>
+        <td>Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if usuario %}
+
+      {% for user in usuario %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.nombre }}</td>
+        <td>{{ user.edad }}</td>
+        <td>{{ user.grado }}</td>
+        <td>{{ user.correo }}</td>
+        <td>{{ user.fecha_creacion }}</td>
+        <td>{{ user.ultima_act }}</td>
+        <td>
+          <a href="{% url 'qr:usuario_editar' user.id %}">Editar</a>
+          <a href="{% url 'qr:usuario_borrar' user.id %}">Borrar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <h4> No existen registros de usuarios</h4>
+      {%  endif %}
+  </tbody>
+{% endblock %}

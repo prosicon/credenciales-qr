@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Folio</td>
+        <td>Nombre</td>
+        <td>Fecha</td>
+        <td>Activa</td>
+        <td>Creada</td>
+        <td>Actualizada</td>
+        <td>Creador</td>
+        <td>Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if qr %}
+
+      {% for enc in qr %}
+      <tr>
+        <td>{{ enc.folio }}</td>
+        <td>{{ enc.nombre }}</td>
+        <td>{{ enc.fecha }}</td>
+        <td>{{ enc.activa }}</td>
+        <td>{{ enc.fecha_creacion }}</td>
+        <td>{{ enc.ultima_act }}</td>
+        <td>{{ enc.usuario }}</td>
+        <td>
+          <a href="{% url 'qr:qr_editar' enc.folio %}">Editar</a>
+          <a href="{% url 'qr:qr_borrar' enc.folio %}">Borrar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <h4> No existen registros de usuarios</h4>
+      {%  endif %}
+  </tbody>
+{% endblock %}
